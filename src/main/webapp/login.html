@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Formulaire</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <form action="auth" method="post">
+            <label>Login :</label>
+            <input id="login" type="text" name="login" placeholder="Votre login" required/>
+            
+            <label>Password :</label>
+            <input id="mdp" type="password" name="password" placeholder="Votre password" required/>
+            
+            <select name="choix">
+                <option>cours</option>
+                <option>TD</option>
+                <option>TP</option>
+            </select>
+            
+            <input id="button" type="submit" value="send" disabled/>
+        </form>
+        
+        <script>
+            let login=document.getElementById("login");
+            let mpd=document.getElementById("mdp");
+            let button=document.getElementById("button");
+            
+            // Fonction pour vérifier si les champs sont remplis et activer/désactiver le bouton
+            function checkFields() {
+                // Vérifie si les deux champs ont une valeur
+                if (login.value.trim() !== "" && mdp.value.trim() !== "") {
+                    button.disabled = false;
+                } else {
+                    button.disabled = true;
+                }
+            }
+
+            // Vérifie chaque fois que l'utilisateur tape quelque chose dans l'un des champs
+            login.addEventListener('input', checkFields);
+            mdp.addEventListener('input', checkFields);
+
+            // Lancer la vérification initiale au cas où les champs sont déjà remplis lors du chargement de la page
+            checkFields();
+        </script>
+    </body>
+    
+    
+</html>
