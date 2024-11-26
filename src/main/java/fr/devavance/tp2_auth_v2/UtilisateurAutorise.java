@@ -21,16 +21,16 @@ public class UtilisateurAutorise extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    PrintWriter out = resp.getWriter();
-    
-    String login = req.getParameter("login");
-            
-    out.println("<h1>Bonjour "+login+"</h1>");
-    out.println("<p>Bonjour "+login+"</p>");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String login = req.getParameter("login");
+        String choix = req.getParameter("choix");
+
+        PrintWriter out = resp.getWriter();        
+        out.println("<h1>Bonjour "+login+"</h1>");
+        out.println("<p>Vous êtes dans la section "+choix+"</p>");
     }
 
     

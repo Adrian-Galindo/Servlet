@@ -11,7 +11,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     <body>
         
-        <form action="auth" method="post">
+        <form action="Identification" method="post">
             <label>Login :</label>
             <input id="login" type="text" name="login" placeholder="Votre login" required/>
             
@@ -19,9 +19,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <input id="mdp" type="password" name="password" placeholder="Votre password" required/>
             
             <select name="choix">
-                <option>cours</option>
-                <option>TD</option>
-                <option>TP</option>
+                <option value="cours">cours</option>
+                <option value="TD">TD</option>
+                <option value="TP">TP</option>
             </select>
             
             <input id="button" type="submit" value="send" disabled/>
